@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('../style/token.css');
+@import url('../style/main.css');
+
+
+
+
+/* Navbar */
+.Navbar {
+    background-color: rgba(24, 26, 28, 1);
+    width: 100%;
+    height: 94px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 25px 80px;
+}
+
+.Navbar-Logo {
+    width: 104px;
+    height: auto;
+}
+
+.Navbar-Link {
+    margin-left: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 80px;
+}
+
+.User-Icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+
+.Profile {
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+.Arow {
+    background-color: rgba(24, 26, 28, 1);
+}
+
+/* area footer */
+Footer {
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 164px;
+    margin: 50px 100px 0px 100px;
+}
+
+
+Footer button {
+    flex-direction: column;
+    display: flex;
+}
+
+Footer button  {
+        background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: inherit; 
+    color: #C1C2C4; 
+
+}
+Footer h3 {
+    color: #FFFFFF;
+}
+
+
+.Footer-Folumn {
+display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1px;
+}

@@ -1,0 +1,51 @@
+.Awal {
+    position: relative;
+    display: inline-block;
+}
+
+.Awal .Master {
+    display: block;
+    width: 100%;
+}
+
+.Poy {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #FFFFFF; 
+    margin-left: -600px;
+}
+
+.Analog {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;  
+    gap: 20px;   
+    width: 1250px;
+    margin-top: 30px;
+}
+.Analog img {
+    position: relative;
+    border: 1px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+.Analog button {
+    background-color: #0F1E93;
+    color: #FFFFFF;
+    padding: 10px 26px ;
+    border-radius: 48px;
+
+}
+.Silent {
+    position: absolute;
+    left: 800px;
+    
+}
+
+
+.Analog i {
+    color: #FFFFFF;
+}
