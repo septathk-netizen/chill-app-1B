@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&family=Londrina+Solid&family=Poppins&display=swap");
+
+/* ===== DESKTOP (default) ===== */
+.footer {
+  background-color: #181a1c;
+  border-top: 1px solid rgba(231, 227, 252, 0.23);
+  padding: 60px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 44px;
+}
+
+.footer-logo img {
+  width: 50px;
+  height: 100%;
+}
+
+.footer-logo span {
+  font-family: "Londrina Solid", sans-serif;
+  font-size: 50px;
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+.footer-copy {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: #c1c2c4;
+  margin: 0;
+}
+
+.footer-menus {
+  display: flex;
+  align-items: flex-start;
+  gap: 160px;
+}
+
+.footer-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: default;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+}
+
+/* Panah disembunyikan di desktop */
+.footer-chevron {
+  display: none;
+}
+
+.footer-columns {
+  display: flex;
+  gap: 28px;
+  margin-top: 15px;
+}
+
+.footer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.footer-list a {
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+  color: #c1c2c4;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.footer-list a:hover {
+  color: #ffffff;
+}
+
+/* ===== TABLET: layar mulai sempit ===== */
+@media (max-width: 1100px) {
+  .footer {
+    padding: 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .footer-menus {
+    gap: 60px;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .footer {
+    padding: 20px;
+    gap: 40px;
+  }
+
+  .footer-brand {
+    gap: 16px;
+  }
+
+  .footer-logo {
+    height: 25px;
+    gap: 3px;
+  }
+
+  .footer-logo img {
+    width: 28px;
+  }
+
+  .footer-logo span {
+    font-size: 24px;
+  }
+
+  .footer-copy {
+    font-family: "Lato", sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
+    letter-spacing: 0.2px;
+  }
+
+  .footer-menus {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .footer-menu-header {
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+  /* Panah muncul, berputar saat menu dibuka */
+  .footer-chevron {
+    display: block;
+    transition: transform 0.2s;
+  }
+
+  .footer-chevron.open {
+    transform: rotate(90deg);
+  }
+
+  /* Daftar link disembunyikan sampai diklik */
+  .footer-columns {
+    display: none;
+    flex-direction: column;
+    gap: 13px;
+    margin-top: 8px;
+  }
+
+  .footer-columns.show {
+    display: flex;
+  }
+}

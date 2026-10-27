@@ -4,7 +4,7 @@ import Logo from '../public/Logo.png';
 import UserIcon from './assets/Ellipse 395.png';
 import ArowDone from './assets/KeyboardArrowDown.png';
 import FrameLogo from '../src/assets/Frame 1000004495.png';
-
+import Footer from '../componen/footer.jsx';
 
 
 import Test  from '../componen/IklanAtas.jsx';
@@ -41,10 +41,11 @@ function App() {
 </div>
 
 <Test/>
+<Footer/>
 
 
 
-<footer>
+  {/* <footer>
   <img src={FrameLogo} />
   <div className="Footer-Column">
     <h3>genre</h3>
@@ -72,11 +73,11 @@ function App() {
   <div Footer-Column1="">
     <h3>bantuan</h3>
     <button>FAQ</button>
-    <button>kontak kami</button>
+  <button>kontak kami</button>
     <button>privasi</button>
     <button>syarat &amp; ketentuan</button>
   </div>
-</footer>
+</footer> */}
 
 
 
