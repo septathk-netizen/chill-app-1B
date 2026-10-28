@@ -10,6 +10,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       {/* Bagian kiri: logo dan copyright */}
+      
       <div className="footer-brand">
         <div className="footer-logo">
           <img src={logoIcon} alt="" />

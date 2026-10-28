@@ -1,91 +1,38 @@
-import { useState } from 'react';
-import './App.css';
-import Logo from '../public/Logo.png';
-import UserIcon from './assets/Ellipse 395.png';
-import ArowDone from './assets/KeyboardArrowDown.png';
-import FrameLogo from '../src/assets/Frame 1000004495.png';
-import Footer from '../componen/footer.jsx';
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import "./App.css";
+import Navbar from "../componen/navbar.jsx";
+import Footer from "../componen/footer.jsx";
+import Home from "../componen/Home.jsx";
+import Film from "../componen/pages/film.jsx";
+import Series from "../componen/pages/series.jsx";
+import DaftarSaya from "../componen/pages/Daftar-Saya.jsx";
 
 
-import Test  from '../componen/IklanAtas.jsx';
-
-
-
-
-function App() {
-
+function Layout() {
   return (
-    <div>
-
-    <div className='BagianHeader'>
-<header className="Navbar">
-  <img className="Navbar-Logo" src={Logo} />
-  <nav className="Navbar-Link">
-    <a className="Body-Large-Medium" href="">
-      Series
-    </a>
-    <a className="Body-Large-Medium" href="">
-      Film
-    </a>
-    <a className="Body-Large-Medium" href="">
-      Daftar Saya
-    </a>
-  </nav>
-  <div className="Profile">
-    <img className="User-Icon" src={UserIcon} />
-    <button className="Btn-Unstyled">
-        <img className='Arow' src={ArowDone} />
-    </button>
-  </div>
-</header>
-</div>
-
-<Test/>
-<Footer/>
-
-
-
-  {/* <footer>
-  <img src={FrameLogo} />
-  <div className="Footer-Column">
-    <h3>genre</h3>
-    <button>aksi</button>
-    <button>anak-anak</button>
-    <button>anime</button>
-    <button>britania</button>
-  </div>
-  <div className="Footer-Column">
-    <button>drama</button>
-    <button>fantasi ilmiah &amp; fantasi</button>
-    <button>kejahatan</button>
-    <button>KDrama</button>
-  </div>
-  <div className="Footer-Column">
-    <button>komedi</button>
-    <button>petualangan</button>
-    <button>perang</button>
-    <button>romantis</button>
-  </div>
-  <div Footer-Column="">
-    <button>sains &amp; alam</button>
-    <button>thriller</button>
-  </div>
-  <div Footer-Column1="">
-    <h3>bantuan</h3>
-    <button>FAQ</button>
-  <button>kontak kami</button>
-    <button>privasi</button>
-    <button>syarat &amp; ketentuan</button>
-  </div>
-</footer> */}
-
-
-
-    </div>
-
-
-    
-  )
+    <>
+      <Navbar />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
+    </>
+  );
 }
 
-export default App
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="film" element={<Film />} />
+          <Route path="DaftarSaya" element={<DaftarSaya />} />
+          <Route path="Series" element={<Series />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default App;

@@ -1,51 +1,165 @@
-.Awal {
-    position: relative;
-    display: inline-block;
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&display=swap");
+
+/* ===== DESKTOP (default) ===== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 587px;
+  background-color: #181a1c;
+  overflow: hidden;
 }
 
-.Awal .Master {
-    display: block;
-    width: 100%;
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.Poy {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    color: #FFFFFF; 
-    margin-left: -600px;
+/* Gradasi: transparan di atas, makin gelap ke bawah */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 17%,
+    rgba(16, 18, 19, 0.86) 59%,
+    #181a1c 100%
+  );
 }
 
-.Analog {
-    display: flex;
-    flex-direction: row; 
-    align-items: center;  
-    gap: 20px;   
-    width: 1250px;
-    margin-top: 30px;
-}
-.Analog img {
-    position: relative;
-    border: 1px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
-}
-.Analog button {
-    background-color: #0F1E93;
-    color: #FFFFFF;
-    padding: 10px 26px ;
-    border-radius: 48px;
-
-}
-.Silent {
-    position: absolute;
-    left: 800px;
-    
+.hero-content {
+  position: absolute;
+  top: 274px;
+  left: 80px;
+  right: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  color: #ffffff;
 }
 
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
-.Analog i {
-    color: #FFFFFF;
+.hero-text h1 {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.1;
+}
+
+.hero-text p {
+  margin: 0;
+  max-width: 668px;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.hero-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 26px;
+  border: none;
+  border-radius: 48px;
+  cursor: pointer;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+}
+
+.hero-btn-primary {
+  background-color: #0f1e93;
+}
+
+.hero-btn-secondary {
+  background-color: #22282a;
+}
+
+.hero-age {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #c1c2c4;
+  border-radius: 24px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+  color: #c1c2c4;
+}
+
+.hero-mute {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: none;
+  border: 1px solid #c1c2c4;
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 1100px) {
+  .hero-content {
+    left: 40px;
+    right: 40px;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .hero {
+    height: 480px;
+  }
+
+  .hero-content {
+    top: auto;
+    bottom: 30px;
+    left: 20px;
+    right: 20px;
+    gap: 24px;
+  }
+
+  .hero-text h1 {
+    font-size: 28px;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+  }
+
+  .hero-btn {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+
+  .hero-age {
+    font-size: 14px;
+  }
 }

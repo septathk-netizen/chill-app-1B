@@ -1,8 +1,38 @@
+import { useState } from "react";
 import { NavLink } from "react-router";
-import GoogleImage from "../assets/google-icon.png";
-import '../style/login'
+import GoogleImage from "../../src/assets/logo-google.png";
+import "../../style/login.css";
 
-function login ( ) {
+function Field({ id, label, isError, errorMsg, children }) {
+  return (
+    <div className="form-field">
+      <label htmlFor={id}>{label}</label>
+      {children}
+      {isError && <span className="form-error">{errorMsg}</span>}
+    </div>
+  );
+}
+
+function FormLogin() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorUsername, setErrorUsername] = useState(false);
+  const [errorPassword, setErrorPassword] = useState(false);
+
+  const handleUsername = (event) => {
+    setUsername(event.target.value);
+  };
+
+  const handlePassword = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setErrorUsername(username === "");
+    setErrorPassword(password === "");
+  };
+
   return (
     <form onSubmit={handleSubmit} className="login-form">
       <Field
@@ -11,7 +41,9 @@ function login ( ) {
         isError={errorUsername}
         errorMsg="Username is required"
       >
-        <InputText
+        <input
+          className="form-input"
+          type="text"
           id="username"
           placeholder="Input username"
           onChange={handleUsername}
@@ -23,7 +55,9 @@ function login ( ) {
         isError={errorPassword}
         errorMsg="Password is required"
       >
-        <InputPassword
+        <input
+          className="form-input"
+          type="password"
           id="password"
           placeholder="Input password"
           onChange={handlePassword}
@@ -54,11 +88,12 @@ function login ( ) {
           className="btn-secondary-outlined body-small-semibold"
           style={{ width: "100%" }}
         >
-          <img className="btn-logo" src={GoogleImage} />
+          <img className="btn-logo" src={GoogleImage} alt="Google" />
           Masuk dengan Google
         </button>
       </div>
     </form>
   );
 }
-export default
+
+export default FormLogin;
