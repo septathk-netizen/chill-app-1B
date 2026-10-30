@@ -1,5 +1,5 @@
 import heroBg from "../src/assets/Rectangle 9.png";
-import Hero from "./pages/IklanAtas.jsx";
+import Hero from "./pages/props elemnt/IklanAtas.jsx";
 
 function Home() {
   return (

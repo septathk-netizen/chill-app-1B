@@ -1,0 +1,18 @@
+
+
+
+.layout-film-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 16px;
+
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.layout-film-row::-webkit-scrollbar {
+  display: none;
+}
+

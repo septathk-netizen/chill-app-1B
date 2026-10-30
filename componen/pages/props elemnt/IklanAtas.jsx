@@ -1,5 +1,6 @@
-import infoIcon from "../../src/assets/Button.png";
-import volumeIcon from "../../src/assets/Frame 65.png";
+import "../../../style/IklaanAtas.css";
+import infoIcon from "../../../src/assets/Button.png";
+import volumeIcon from "../../../src/assets/Frame 65.png";
 
 export default function Hero({ img, title, description }) {
   return (
