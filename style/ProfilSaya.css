@@ -1,0 +1,186 @@
+.Profil_Card {
+    /* Frame 1000004522 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 32px;
+
+width: 642px;
+height: 428px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+}
+
+
+
+
+.Profilsaya {
+/* Melanjutkan Tonton Film */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+padding: 40px 80px;
+gap: 32px;
+
+
+
+}
+h2 {
+    /* Profil Saya */
+
+width: 150px;
+
+/* Heading/Heading 3
+
+Judul Konten di dalam Section
+*/
+font-family: 'Lato';
+font-style: normal;
+font-weight: 700;
+line-height: 110%;
+/* or 35px */
+text-align: center;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+.Profil {
+    /* Frame 1000004519 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 24px;
+
+width: 287px;
+height: 140px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+.Maksimal2mb button {
+    /* Button */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 120px;
+height: 42px;
+
+/* Primary/Default */
+border: 1px solid #3254FF;
+border-radius: 48px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+.Profil a {
+    /* Maksimal 2MB */
+
+width: 95px;
+height: 20px;
+
+/* Body Small/Small-Regular */
+font-family: 'Lato';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 140%;
+/* identical to box height, or 20px */
+letter-spacing: 0.2px;
+
+/* Text (Light)/Secondary */
+color: #C1C2C4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Mulai_Berlangganan {
+    /* Frame 1000004524 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-end;
+padding: 24px;
+gap: 20px;
+
+width: 558px;
+height: 193px;
+
+/* Other/Extra */
+background: #3D4142;
+border-radius: 12px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 1;
+
+}
+.Mulai_Berlangganan img {
+    /* Warning */
+
+position: absolute;
+left: 0%;
+right: 0%;
+
+
+
+}

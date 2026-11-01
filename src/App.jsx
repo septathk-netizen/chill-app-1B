@@ -6,6 +6,8 @@ import Home from "../componen/Home.jsx";
 import Film from "../componen/pages/film.jsx";
 import Series from "../componen/pages/series.jsx";
 import DaftarSaya from "../componen/pages/Daftar-Saya.jsx";
+import ProfilSaya from "../componen/pages/Profil_saya.jsx";
+import UbahPremium from "../componen/pages/UbahPremium.jsx";
 
 
 function Layout() {
@@ -29,6 +31,8 @@ function App() {
           <Route path="film" element={<Film />} />
           <Route path="DaftarSaya" element={<DaftarSaya />} />
           <Route path="Series" element={<Series />} />
+          <Route path="Profil" element={<ProfilSaya />} />
+          <Route path="Premium" element={<UbahPremium />} />
         </Route>
       </Routes>
     </BrowserRouter>

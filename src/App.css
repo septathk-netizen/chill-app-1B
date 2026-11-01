@@ -45,7 +45,77 @@
 .Arow {
     background-color: rgba(24, 26, 28, 1);
 }
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
 
+/* Tombol panah */
+.dropdown-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.dropdown-button img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+.Profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.Btn-Unstyled {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+
+  width: 135px;
+  background-color: #171a1c;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 8px 0;
+  border-radius: 4px;
+
+  z-index: 1000;
+}
+
+.dropdown-menu a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 9px 12px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:first-child {
+  color: #315bff;
+}
+
+.dropdown-menu a:hover {
+  background-color: #292d30;
+}
 /* area footer */
 Footer {
     
@@ -82,4 +152,61 @@ display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 1px;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tombol panah */
+.dropdown-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.dropdown-button img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Popup */
+.dropdown-menu {
+  position: absolute;
+  top: 55px;
+  right: 0;
+
+  width: 135px;
+  background-color: #171a1c;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 8px 0;
+  border-radius: 4px;
+
+  z-index: 1000;
+}
+
+/* Isi popup */
+.dropdown-menu a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 12px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background-color: #292d30;
+}
+
+.dropdown-menu .active {
+  color: #315bff;
 }
