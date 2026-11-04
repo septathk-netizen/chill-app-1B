@@ -1,186 +1,231 @@
-.Profil_Card {
-    /* Frame 1000004522 */
-
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
-gap: 32px;
-
-width: 642px;
-height: 428px;
-
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
-
-}
-
-
-
-
 .Profilsaya {
-/* Melanjutkan Tonton Film */
-
-/* Auto layout */
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: flex-start;
-padding: 40px 80px;
-gap: 32px;
-
-
-
+    /* Section Profil Saya */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 80px;
+    gap: 32px;
 }
-h2 {
-    /* Profil Saya */
 
-width: 150px;
-
-/* Heading/Heading 3
-
-Judul Konten di dalam Section
-*/
-font-family: 'Lato';
-font-style: normal;
-font-weight: 700;
-line-height: 110%;
-/* or 35px */
-text-align: center;
-
-color: #FFFFFF;
-
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
+.Profilsaya h2 {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 110%;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0;
 }
+
+.Profil_Card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 32px;
+    width: 642px;
+}
+
+/* ===== Foto profil + tombol ubah foto ===== */
 .Profil {
-    /* Frame 1000004519 */
-
-/* Auto layout */
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 0px;
-gap: 24px;
-
-width: 287px;
-height: 140px;
-
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 24px;
+    width: 287px;
+    height: 140px;
 }
+
+.Profil_Foto {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.Maksimal2mb {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
 .Maksimal2mb button {
-    /* Button */
-
-box-sizing: border-box;
-
-/* Auto layout */
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding: 0px;
-
-width: 120px;
-height: 42px;
-
-/* Primary/Default */
-border: 1px solid #3254FF;
-border-radius: 48px;
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    width: 120px;
+    height: 42px;
+    background: transparent;
+    color: #FFFFFF;
+    font-family: 'Lato';
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid #3254FF;
+    border-radius: 48px;
+    transition: background 0.2s;
 }
+
+.Maksimal2mb button:hover {
+    background: rgba(50, 84, 255, 0.2);
+}
+
+.Info_Upload {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 .Profil a {
-    /* Maksimal 2MB */
-
-width: 95px;
-height: 20px;
-
-/* Body Small/Small-Regular */
-font-family: 'Lato';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 140%;
-/* identical to box height, or 20px */
-letter-spacing: 0.2px;
-
-/* Text (Light)/Secondary */
-color: #C1C2C4;
-
-
-/* Inside auto layout */
-flex: none;
-order: 1;
-flex-grow: 0;
-
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 0.2px;
+    color: #C1C2C4;
 }
 
+/* ===== Form ===== */
+.From {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    width: 642px;
+}
 
+.Form_Group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
 
+.Form_Group label {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 0.2px;
+    color: #C1C2C4;
+}
 
+.From input {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 8px;
+    width: 642px;
+    height: 64px;
+    font-family: 'Lato';
+    font-size: 16px;
+    color: #FFFFFF;
+    background: #22282A;
+    border: 1px solid rgba(231, 227, 252, 0.23);
+    border-radius: 8px;
+    outline: none;
+}
 
+.From input::placeholder {
+    color: rgba(193, 194, 196, 0.6);
+}
 
+.From input:focus {
+    border-color: #3254FF;
+}
 
+.Btn_Simpan {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 24px;
+    width: 160px;
+    height: 48px;
+    background: #3254FF;
+    color: #FFFFFF;
+    font-family: 'Lato';
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 48px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
 
+.Btn_Simpan:hover {
+    background: #2643d8;
+}
 
-
-
-
-
-
-
-
-
-
+/* ===== Panel berlangganan ===== */
 .Mulai_Berlangganan {
-    /* Frame 1000004524 */
-
-/* Auto layout */
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: flex-end;
-padding: 24px;
-gap: 20px;
-
-width: 558px;
-height: 193px;
-
-/* Other/Extra */
-background: #3D4142;
-border-radius: 12px;
-
-/* Inside auto layout */
-flex: none;
-order: 1;
-flex-grow: 1;
-
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 20px;
+    width: 558px;
+    height: 193px;
+    background: #3D4142;
+    border-radius: 12px;
 }
+
 .Mulai_Berlangganan img {
-    /* Warning */
+    position: absolute;
+    left: 24px;
+    top: 24px;
+    width: 40px;
+    height: 40px;
+}
 
-position: absolute;
-left: 0%;
-right: 0%;
+.Mulai_Berlangganan h2 {
+    font-size: 24px;
+    margin-left: 56px;
+    text-align: left;
+}
 
+.Mulai_Berlangganan p {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #C1C2C4;
+    margin: 0;
+}
 
+.Mulai_Berlangganan button {
+    align-self: flex-end;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 24px;
+    height: 48px;
+    background: #3254FF;
+    color: #FFFFFF;
+    font-family: 'Lato';
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 48px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
 
+.Mulai_Berlangganan button:hover {
+    background: #2643d8;
 }

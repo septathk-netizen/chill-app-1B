@@ -1,42 +1,54 @@
- import '../../style/ProfilSaya.css';
- import Profil from '../../src/assets/Image.png'
- import Maksimal2mb from '../../src/assets/file-upload-outline.png'
- import Warning from '../../src/assets/Warning.png'
+import '../../style/ProfilSaya.css';
+import DaftarSaya from './Daftar-Saya';
+import Profil from '../../src/assets/Image.png'
+import Maksimal2mb from '../../src/assets/file-upload-outline.png'
+import Warning from '../../src/assets/Warning.png'
 
- function ProfilSaya (){
+function ProfilSaya (){
     return(
+        <>
         <div className="Profilsaya">
-<h2>Profil Saya</h2>
+            <h2>Profil Saya</h2>
 
-<div className='Profil_Card'>
+            <div className='Profil_Card'>
 
-<div className='Profil'>
- <img src={Profil} />
- <div className='Maksimal2mb'>
- <button>Ubah foto</button>
- <img src= {Maksimal2mb}  />
- <a > Maksimal 2MB</a>
- 
- </div>
-</div>
-</div>
+                <div className='Profil'>
+                    <img src={Profil} alt="Foto Profil" className='Profil_Foto' />
+                    <div className='Maksimal2mb'>
+                        <button>Ubah foto</button>
+                        <div className='Info_Upload'>
+                            <img src={Maksimal2mb} alt="Upload" />
+                            <a>Maksimal 2MB</a>
+                        </div>
+                    </div>
+                </div>
 
-<div className='Mulai_Berlangganan'>
-    <img src={Warning}  />
-    <h2> Saat ini anda belum berlangganan</h2>
-    <p>Dapatkan akses tak terbatas ke ribuan film dan series kesukaan kamu</p>
-    <button>Mukai Berlangganan</button>
+                <form className='From' onSubmit={(e) => e.preventDefault()}>
+                    <div className='Form_Group'>
+                        <label htmlFor="nama">Nama</label>
+                        <input type="text" id="nama" placeholder="Ketik nama kamu di sini" />
+                    </div>
+                    <div className='Form_Group'>
+                        <label htmlFor="username">Username</label>
+                        <input type="text" id="username" placeholder="Ketik username kamu di sini" />
+                    </div>
+                    <div className='Form_Group'>
+                        <label htmlFor="email">Email</label>
+                        <input type="email" id="email" placeholder="Ketik email kamu di sini" />
+                    </div>
+                    <button type="submit" className='Btn_Simpan'>Simpan</button>
+                </form>
+            </div>
 
-</div>
-
-
-
-
-
-
-
-
+            <div className='Mulai_Berlangganan'>
+                <img src={Warning} alt="Warning" />
+                <h2>Saat ini anda belum berlangganan</h2>
+                <p>Dapatkan akses tak terbatas ke ribuan film dan series kesukaan kamu</p>
+                <button>Mulai Berlangganan</button>
+            </div>
         </div>
+        <DaftarSaya/>
+        </>
     )
- }
- export default ProfilSaya;
+}
+export default ProfilSaya;

@@ -1,0 +1,218 @@
+.Berlangganan {
+    /* Frame 1000004503 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 40px 80px;
+gap: 72px;
+
+width: 1440px;
+top: 174px;
+
+
+}
+.Berlangganan h2 {
+/* Kenapa Harus Berlangganan? */
+
+width: 416px;
+height: 35px;
+
+/* Heading/Heading 3
+
+Judul Konten di dalam Section
+*/
+font-family: 'Lato';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 110%;
+/* or 35px */
+
+/* Text (Light)/Primary */
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+
+.Parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+}
+.Div {
+/* Frame 1000004505 */
+
+/* Auto layout */
+flex-direction: column;
+align-items: center;
+padding: 0px;
+gap: 24px;
+display: flex;
+  justify-content: center;
+width: 426.67px;
+height: 120px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 1;
+/* Inside auto layout */
+
+}
+
+.Div p {
+    /* Download Konten Pilihan */
+display: flex;
+  justify-content: center;
+width: 426.67px;
+height: 48px;
+
+/* Heading/Heading 5
+
+Judul Sub-sub-Konten di dalam Section
+*/
+font-family: 'Lato';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 120%;
+/* or 24px */
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Text (Light)/Secondary */
+color: #C1C2C4;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+}
+.Div img {
+    /* download */
+
+width: 48px;
+height: 48px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+}
+
+.PilihPaket {
+    /* Frame 1000004504 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 40px 80px;
+gap: 40px;
+
+width: 1440px;
+height: 592px;
+left: calc(50% - 1440px/2);
+top: 721px;
+
+/* Other/Paper */
+background: #22282A;
+
+}
+
+.Text {
+    /* Frame 1000004544 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+gap: 12px;
+
+width: 298px;
+height: 72px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+    
+
+}
+.Text h2 {
+    /* Pilih Paketmu */
+
+width: 196px;
+height: 35px;
+
+/* Heading/Heading 3
+
+Judul Konten di dalam Section
+*/
+font-family: 'Lato';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 110%;
+/* or 35px */
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+
+}
+.Text p {
+    /* Temukan paket sesuai kebutuhanmu! */
+
+width: 298px;
+height: 25px;
+
+/* Body Large/Large-Medium */
+font-family: 'Lato';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 140%;
+/* or 25px */
+letter-spacing: 0.2px;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+
+}
+    
+
+
+        
