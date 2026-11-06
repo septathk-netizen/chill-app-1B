@@ -1,4 +1,4 @@
-
+import '../../style/DaftarSaya.css'
 
 import Frame74 from '../../src/assets/Frame 74 (1).png'
 import Frame78 from '../../src/assets/Frame 78 (3).png'
@@ -16,9 +16,10 @@ import Frame79a from '../../src/assets/Frame 79 (2).png'
 
 function DaftarSaya (){
     return (
-        <>
+        <div className='DaftarSaya'>
+
         <h2>Daftar Saya</h2>
-        <div>
+        <div className='Img1'>
 
             <img src={Frame74} />
             <img src={Frame78} />
@@ -34,7 +35,7 @@ function DaftarSaya (){
             <img src={Frame79a} />
 
         </div>
-        </>
+        </div>
     )
 }
 <style>

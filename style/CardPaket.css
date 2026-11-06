@@ -1,0 +1,261 @@
+.Card {
+    /* Frame 1000004514 */
+
+/* Auto layout */
+padding: 24px;
+gap: 38px;
+
+width: 236px;
+height: 400px;
+
+background: linear-gradient(286.17deg, #192DB7 0%, #5370D4 100%);
+border-radius: 12px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+.Individual {
+    /* Frame 1000004515 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 24px;
+
+width: 188px;
+height: 213px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+}
+.Individual h2 {
+    /* Individual */
+
+
+/* Body Large/Large-Semibold */
+font-family: 'Lato';
+font-size: 18px;
+/* or 25px */
+
+color: #FFFFFF;
+
+
+
+    /* Frame 1000004528 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 10px 20px;
+gap: 10px;
+
+width: 120px;
+height: 45px;
+
+/* Other/Extra */
+background: #3D4142;
+border-radius: 24px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+h3 {
+/* Mulai dari Rp49,990/bulan */
+
+width: 170px;
+height: 20px;
+
+/* Body Small/Small-Regular */
+font-family: 'Lato';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 140%;
+/* identical to box height, or 20px */
+letter-spacing: 0.2px;
+
+/* Text (Light)/Primary */
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+
+
+.Ceklis0 {
+    /* Frame 1000004532 */
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 8px;
+
+width: 183px;
+height: 76px;
+margin-top: 24px;
+margin-bottom: 65px;
+
+
+
+}
+.Ceklis1 {
+    /* Frame 1000004530 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 8px;
+
+width: 122px;
+height: 20px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+}
+.Ceklis1 p {
+    /* Tidak ada iklan */
+white-space: nowrap;
+width: 94px;
+height: 20px;
+
+/* Body Small/Small-Regular */
+font-family: 'Lato';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 140%;
+/* identical to box height, or 20px */
+letter-spacing: 0.2px;
+
+/* Text (Light)/Primary */
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+}
+.Syarat {
+    /* Frame 1000004529 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+gap: 4px;
+
+width: 188px;
+height: 63px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+}
+button {
+    /* Button */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 188px;
+height: 42px;
+
+/* Text (Light)/Primary */
+background: #FFFFFF;
+border-radius: 48px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+.Syarat h3 {
+    /* Button */
+
+width: 79px;
+height: 22px;
+
+/* Body Medium/Medium-Bold */
+font-family: 'Lato';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 140%;
+/* or 22px */
+letter-spacing: 0.2px;
+
+/* Primary/300 */
+color: #0F1E93;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+.Syarat p {
+    /* Syarat dan Ketentuan Berlaku */
+white-space: nowrap;
+
+width: 162px;
+height: 17px;
+
+font-family: 'Lato';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 140%;
+/* identical to box height, or 17px */
+letter-spacing: 0.2px;
+
+/* Text (Light)/Primary */
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+margin-bottom: 24px;
+
+
+}

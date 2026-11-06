@@ -212,7 +212,24 @@ flex-grow: 0;
 
 
 }
-    
+
+ .CardPaketmu {
+    /* Frame 1000004535 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 72px;
+
+width: 852px;
+height: 400px;
 
 
-        
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+ }     

@@ -2,14 +2,26 @@
 
 
 .layout-film-row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 16px;
+/* Card */
 
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
+/* Card */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 24px;
+isolation: isolate;
+
+width: 1280px;
+height: 162px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
 }
 
 .layout-film-row::-webkit-scrollbar {

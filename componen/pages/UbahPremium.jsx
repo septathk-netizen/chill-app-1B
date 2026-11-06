@@ -5,6 +5,7 @@
  import Gambar4 from '../../src/assets/video-4k-box.png'
  import Gambar5 from '../../src/assets/tablet-cellphone.png'
  import Gambar6 from '../../src/assets/message-reply-text.png'
+ import CardPaket from './props elemnt/CardPaket.jsx'
 
  function UbahPremium (){
     return(
@@ -39,19 +40,21 @@
     </div>
     </div> 
 
-
-    <div className='PilihPaket'>
-        <div className='Text '>
-        <h2>Pilih Paket</h2>
-        <p>Temukan paket sesuai kebutuhanmu </p>
-
         </div>
+        <div className='PilihPaket'>
+  <div className='Text'>
+    <h2>Pilih Paket</h2>
+    <p>Temukan paket sesuai kebutuhanmu</p>
+  </div>
 
-    </div>
-
-    
-    
+  <div className='CardPaketmu'>
+    <CardPaket/>
+    <CardPaket/>
+    <CardPaket/>
+  </div>
 </div>
+    
+
 
 
 

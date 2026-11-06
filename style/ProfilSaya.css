@@ -1,8 +1,11 @@
+/* =========================
+   SECTION PROFIL SAYA
+========================= */
+
 .Profilsaya {
-    /* Section Profil Saya */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     padding: 40px 80px;
     gap: 32px;
@@ -19,21 +22,44 @@
     margin: 0;
 }
 
+
+/* =========================
+   LAYOUT UTAMA
+========================= */
+
 .Profil_Card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0;
+    gap: 80px;
+    width: 100%;
+}
+
+
+/* =========================
+   BAGIAN KIRI
+========================= */
+
+.Profil_Kiri {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0px;
     gap: 32px;
     width: 642px;
+    flex-shrink: 0;
 }
 
-/* ===== Foto profil + tombol ubah foto ===== */
+
+/* =========================
+   FOTO PROFIL
+========================= */
+
 .Profil {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0px;
+    padding: 0;
     gap: 24px;
     width: 287px;
     height: 140px;
@@ -59,7 +85,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0px;
+    padding: 0;
     width: 120px;
     height: 42px;
     background: transparent;
@@ -83,6 +109,12 @@
     gap: 8px;
 }
 
+.Info_Upload img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
 .Profil a {
     font-family: 'Lato';
     font-style: normal;
@@ -93,13 +125,17 @@
     color: #C1C2C4;
 }
 
-/* ===== Form ===== */
+
+/* =========================
+   FORM PROFIL
+========================= */
+
 .From {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 24px;
-    width: 642px;
+    width: 100%;
 }
 
 .Form_Group {
@@ -126,7 +162,7 @@
     align-items: center;
     padding: 8px 16px;
     gap: 8px;
-    width: 642px;
+    width: 100%;
     height: 64px;
     font-family: 'Lato';
     font-size: 16px;
@@ -144,6 +180,11 @@
 .From input:focus {
     border-color: #3254FF;
 }
+
+
+/* =========================
+   TOMBOL SIMPAN
+========================= */
 
 .Btn_Simpan {
     box-sizing: border-box;
@@ -168,32 +209,59 @@
     background: #2643d8;
 }
 
-/* ===== Panel berlangganan ===== */
+
+/* =========================
+   PANEL BERLANGGANAN
+========================= */
+
 .Mulai_Berlangganan {
-    position: relative;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: flex-end;
     padding: 24px;
     gap: 20px;
-    width: 558px;
+    flex: 1;
+    min-width: 0;
     height: 193px;
     background: #3D4142;
     border-radius: 12px;
 }
 
-.Mulai_Berlangganan img {
-    position: absolute;
-    left: 24px;
-    top: 24px;
-    width: 40px;
-    height: 40px;
+
+/* Konten gambar dan teks */
+.Langganan_Content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+}
+
+.Langganan_Content img {
+    width: 78px;
+    height: 78px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.Langganan_Text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
 }
 
 .Mulai_Berlangganan h2 {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
     font-size: 24px;
-    margin-left: 56px;
+    line-height: 120%;
+    color: #FFFFFF;
+    margin: 0;
     text-align: left;
 }
 
@@ -207,6 +275,8 @@
     margin: 0;
 }
 
+
+/* Tombol berlangganan */
 .Mulai_Berlangganan button {
     align-self: flex-end;
     box-sizing: border-box;
