@@ -1,0 +1,206 @@
+@font-face {
+  font-family: "Lato:Bold";
+  src: url("https://static.figma.com/font/Lato-Bold_1") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Lato:Regular";
+  src: url("https://static.figma.com/font/Lato-Regular_1") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@layer base {
+  html {
+    background: #000;
+  }
+
+  body {
+    min-width: 320px;
+    min-height: 100dvh;
+    background: #000;
+  }
+
+  button {
+    cursor: pointer;
+  }
+}
+
+.page-shell {
+  min-height: 100dvh;
+  overflow: hidden;
+  background: #000;
+  color: #fff;
+}
+
+.trending-section {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 32px;
+  padding: 40px 80px;
+}
+
+.trending-title {
+  margin: 0;
+  font-family: "Lato:Bold", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+}
+
+.movie-track {
+  display: flex;
+  width: 100%;
+  gap: 28px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  scrollbar-width: none;
+}
+
+.movie-track::-webkit-scrollbar {
+  display: none;
+}
+
+.movie-card {
+  position: relative;
+  flex: 0 0 234px;
+  height: 365px;
+  overflow: hidden;
+  border-radius: 8px;
+  scroll-snap-align: start;
+}
+
+.movie-poster {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.top-ten-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 4px;
+  border-radius: 0 4px 0 4px;
+  background: #b71f1d;
+  color: #fff;
+  font-family: "Lato:Regular", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+  text-align: center;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 161px;
+  z-index: 2;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 1px solid rgb(231 227 252 / 23%);
+  border-radius: 50%;
+  background: #2f3334;
+  transition:
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+.carousel-button:hover {
+  background: #414647;
+}
+
+.carousel-button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.carousel-button:active {
+  transform: scale(0.94);
+}
+
+.carousel-button img {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.carousel-button--previous {
+  left: -22px;
+}
+
+.carousel-button--next {
+  right: -22px;
+}
+
+@media (min-width: 1180px) {
+  .movie-card {
+    flex-basis: calc((100% - 112px) / 5);
+  }
+}
+
+@media (max-width: 767px) {
+  .trending-section {
+    gap: 24px;
+    padding: 32px 20px;
+  }
+
+  .trending-title {
+    font-size: 28px;
+  }
+
+  .movie-track {
+    gap: 16px;
+  }
+
+  .movie-card {
+    flex-basis: min(68vw, 234px);
+    height: auto;
+    aspect-ratio: 234 / 365;
+  }
+
+  .carousel-button {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .carousel-button:active {
+    transform: translateY(-50%) scale(0.94);
+  }
+
+  .carousel-button--previous {
+    left: -12px;
+  }
+
+  .carousel-button--next {
+    right: -12px;
+  }
+}
+.color-primary-wrapper {
+  padding: 10px 26px;
+  border: none;
+  border-radius: 48px;
+  background-color: var(--primary-300, #0f1e93);
+  color: var(--text-lightprimary, #ffffff);
+  font-family: var(--body-medium-medium-bold-font-family, "Lato", sans-serif);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}

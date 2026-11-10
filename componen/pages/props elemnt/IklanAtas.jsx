@@ -28,9 +28,7 @@ export default function Hero({ img, title, description }) {
             <span className="hero-age">18+</span>
           </div>
 
-          <button className="hero-mute">
             <img src={volumeIcon} alt="Suara mati" />
-          </button>
         </div>
       </div>
     </section>

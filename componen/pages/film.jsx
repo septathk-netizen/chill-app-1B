@@ -17,8 +17,9 @@ function Film () {
 <div>
         <Hero
   img={LatarBlakang1}
-  title="boy"
-  description="disini filmnya"
+  title="Avatar3"
+  description=" melanjutkan cerita konflik antara manusia dan Na'vi di planet Pandora. Dalam pertempuran untuk sumber daya dan kekuasaan, manusia dan sekutu Na'vi bersatu untuk melindungi tanah mereka. Film ini mengangkat 
+  tema persatuan dan perlawanan terhadap eksploitasi."
 />
   <LayoutFilm
     title="Melanjutkan Tonton Series"
@@ -45,6 +46,6 @@ function Film () {
 
     
 </div>
-    );
+);
 }
 export default  Film 

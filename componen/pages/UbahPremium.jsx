@@ -48,9 +48,21 @@
   </div>
 
   <div className='CardPaketmu'>
-    <CardPaket/>
-    <CardPaket/>
-    <CardPaket/>
+    <CardPaket
+       title="Individu"    
+       harga="Mulai Rp49.990/bulan 1 Akun"
+       kualitas="Kualitas 720p"
+    />
+    <CardPaket
+       title="Berdua"    
+       harga="Mulai Rp79.990/bulan 2 Akun"
+       kualitas="Kualitas 1080p"
+    />
+    <CardPaket
+       title="Kluasrga"    
+       harga="Mulai Rp159.990/bulan 5-7 Akun"
+       kualitas="Kualitas 4k"
+    />
   </div>
 </div>
     

@@ -4,12 +4,12 @@ import Ceklis from '../../../src/assets/check.png'
 
 
 
-function CardPaket (){
+function CardPaket ({title,harga,kualitas}){
     return (
         <div className="Card">
           <div className='Individual'>
-            <h2>Individual</h2>
-            <h3>Mulai Rp49.990/bulan 1 Akun</h3>
+            <h2>{title}</h2>
+            <h3>{harga}</h3>
 
 
             <div className='Ceklis0'>
@@ -19,7 +19,7 @@ function CardPaket (){
               </div>
               <div className='Ceklis1'>
                 <img src= { Ceklis} />
-                <p>Kualitas 720p</p>
+                <p>{kualitas}</p>
               </div>
               <div className='Ceklis1'>
                 <img src= { Ceklis} />
