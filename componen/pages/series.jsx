@@ -17,8 +17,9 @@ function Series (){
 
         <Hero
   img={LatarBlakang}
-  title="boy"
-  description="disini filmnya"
+  title="Happiness"
+  description="Mengisahkan tentang kelompok orang yang berjuang untuk bertahan hidup di dalam sebuah gedung apartemen yang penuh dengan zombie. Sayangnya, virus 
+  zombie hanya terdapat di dalam area apartemen tersebut dan tidak menyebar ke luar kawasan apartemen."
 />
 
   <LayoutFilm

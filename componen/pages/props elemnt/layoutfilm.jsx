@@ -14,25 +14,24 @@ function LayoutFilm({ title, items }) {
 
   return (
     <section className="layout-film">
-      <div className="layout-film-head">
-        <h2 className="layout-film-title">{title}</h2>
-        <div className="layout-film-nav">
-          <button
-            className="layout-film-arrow"
-            onClick={() => geser(-1)}
-            aria-label="Geser kiri"
-          >
-            ‹
-          </button>
-          <button
-            className="layout-film-arrow"
-            onClick={() => geser(1)}
-            aria-label="Geser kanan"
-          >
-            ›
-          </button>
-        </div>
-      </div>
+  <div className="layout-film-inner">
+    <h2 className="layout-film-title">{title}</h2>
+
+    <div className="layout-film-wrap">
+      <button
+        className="layout-film-arrow kiri"
+        onClick={() => geser(-1)}
+        aria-label="Geser kiri"
+      >
+        ‹
+      </button>
+      <button
+        className="layout-film-arrow kanan"
+        onClick={() => geser(1)}
+        aria-label="Geser kanan"
+      >
+        ›
+      </button>
 
       <div className="layout-film-row" ref={rowRef}>
         {items.map((item, index) => (
@@ -45,7 +44,9 @@ function LayoutFilm({ title, items }) {
           </div>
         ))}
       </div>
-    </section>
+    </div>
+  </div>
+</section>
   );
 }
 

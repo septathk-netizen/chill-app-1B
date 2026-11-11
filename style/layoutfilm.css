@@ -1,30 +1,90 @@
+/* 1. Section ikut warna latar halaman */
+.layout-film {
+  padding: 16px 40px 24px;
+  background-color: transparent;
+  color: #ffffff;
+  box-sizing: border-box;
+}
 
+/* 2. Lebar isi dibatasi dan ditaruh di tengah */
+.layout-film-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
+/* 3. Judul rata kiri */
+.layout-film-title {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 600;
+}
 
+/* 4. Pembungkus deretan poster, patokan posisi panah */
+.layout-film-wrap {
+  position: relative;
+}
+
+/* 5. Deretan poster yang bisa digeser */
 .layout-film-row {
-/* Card */
-
-/* Card */
-
-/* Auto layout */
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-padding: 0px;
-gap: 24px;
-isolation: isolate;
-
-width: 1280px;
-height: 162px;
-
-
-/* Inside auto layout */
-flex: none;
-order: 1;
-flex-grow: 0;
+  display: flex;
+  justify-content: safe center;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
 }
 
 .layout-film-row::-webkit-scrollbar {
   display: none;
 }
 
+
+
+
+
+/* 8. Judul disembunyikan, tetap terbaca screen reader */
+.layout-film-judul {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* 9. Panah kecil, di tengah tinggi poster, menumpang di tepi */
+.layout-film-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(20, 20, 20, 0.7);
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.layout-film-arrow.kiri {
+  left: 4px;
+}
+
+.layout-film-arrow.kanan {
+  right: 4px;
+}
+
+/* 10. Di HP, tampilkan 3 poster */
+@media (max-width: 600px) {
+  .layout-film-card {
+    flex: 0 0 calc((100% - 2 * 10px) / 3);
+  }
+}
