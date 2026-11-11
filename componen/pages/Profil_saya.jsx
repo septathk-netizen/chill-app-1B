@@ -3,12 +3,10 @@ import DaftarSaya from './Daftar-Saya';
 import Profil from '../../src/assets/Image.png'
 import Maksimal2mb from '../../src/assets/file-upload-outline.png'
 import Warning from '../../src/assets/Warning.png'
-
 function ProfilSaya (){
     return(
         <>
         <div className="Profilsaya">
-
     <h2>Profil Saya</h2>
 
     <div className="Profil_Card">
