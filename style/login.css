@@ -1,73 +1,217 @@
-.container {
-    width: 100%;
-    min-height: 100vh;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.login-container {
-    width: 529px;
-    /* height: 663px; */
-    /* gap: 37px; */
-    border-radius: 16px;
-    padding: 40px;
-    background-color: rgba(24, 26, 28, 0.84);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
 }
 
-.logo {
-   width: 163px; 
-   height: 44px;
-   margin-bottom: 37px;
+/* dulu ada di body, sekarang di .beground (wrapper di Login.jsx) */
+.beground {
+  background-image: url('../src/assets/1.1masuk.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.login-form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+.card {
+  min-width: 306px;
+  max-width: 529px;
+  padding: 24px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: #181A1CD6;
 }
 
-.form-field {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
 }
 
-.form-info-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 37px;
+.title img {
+  width: 163px;
+  gap: 4px;
+  height: 44px;
 }
 
-.form-action {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: center;
+.title h2 {
+  color: #FFFFFF;
+  width: 96px;
+  height: 35px;
 }
 
-.btn-logo {
-    width: 18px;
-    height: 18px;
+.title p {
+  color: #FFFFFF;
+  width: 174px;
+  height: 22px;
+  margin-bottom: 8px;
 }
 
-.password-visibility {
-    position: absolute;
-    right: 0;
-    bottom: 28px;
+.form-group label {
+  display: flex;
+  color: #FFFFFF;
+  width: 82px;
+  height: 25px;
+  gap: 10px;
 }
 
-.error-label {
-    color: red;
-    visibility: hidden;
+.form-group input {
+  width: 449px;
+  height: 50px;
+  top: 14px;
+  right: auto;
+  bottom: 14px;
+  left: 2px;
+  gap: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
+  background: #181A1CD6;
+  color: #ebe8e8e6;
+  padding: 0 18px;
+  outline: none;
+  box-shadow: none;
+  margin-bottom: 24px;
+}
+
+.form-group input:focus,
+.form-group input:focus-visible {
+  box-shadow: none;
+  outline: none;
+}
+
+.form-group input::placeholder {
+  color: #C1C2C4;
+}
+
+.name {
+  margin-bottom: 24px;
+}
+
+.bantuan {
+  color: #fff;
+  width: 100%;
+  margin: 12px 0 20px;
+  margin-top: -1%;
+  margin-bottom: 48px;
+}
+
+.punya-akun {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.punya-akun p {
+  margin: 0;
+  color: #fff;
+  font-size: 14px;
+}
+
+.punya-akun a {
+  color: #fff;
+  text-decoration: none;
+  text-align: right;
+}
+
+.kode1 {
+  color: #C1C2C4;
+}
+
+.inter button {
+  width: 449px;
+  height: 50px;
+  top: 14px;
+  right: 0px;
+  bottom: 14px;
+  left: 2px;
+  gap: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
+  background: #181A1CD6;
+  color: #fff;
+  padding: 0 18px;
+  outline: none;
+  box-shadow: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.masuk button {
+  width: 449px;
+  height: 50px;
+  top: 14px;
+  right: 0px;
+  bottom: 14px;
+  left: 2px;
+  gap: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
+  background: #3D4142;
+  color: #fff;
+  padding: 0 18px;
+  outline: none;
+  box-shadow: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.inter button {
+  display: flex;
+  align-items: center;      /* Membuat posisi vertikal gambar dan teks sejajar di tengah */
+  justify-content: center;  /* Mengatur posisi horizontal (bisa diganti flex-start jika ingin rata kiri) */
+  gap: 10px;                /* Mengatur jarak antara gambar dan teks */
+  padding: 10px 20px;       /* Menyesuaikan ukuran tombol agar lebih rapi */
+  cursor: pointer;
+}
+
+.inter button img {
+  width: 20px;
+  height: 20px;
+}
+
+.inter p {
+  font-size: 20px;
+}
+
+.sandi1 .input-rapper1 {
+  position: relative;
+  display: inline-block;
+}
+
+.sandi1 .input-rapper1 input[type="password"] {
+  padding-right: 40px !important;
+}
+
+.sandi1 .input-rapper1 img {
+  position: absolute;
+  right: 15px;
+  top: 30%;
+  transform: translateY(-50%);
+  width: 20px;
+  cursor: pointer;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 360px) {
+  .card {
+    transform: scale(0.65);
+     transform-origin: center;
+  }
 }
