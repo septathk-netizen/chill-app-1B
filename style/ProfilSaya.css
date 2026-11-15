@@ -300,3 +300,54 @@
 .Mulai_Berlangganan button:hover {
     background: #2643d8;
 }
+
+/* =========================
+   MOBILE (max-width: 480px)
+   Frame Figma mobile: 587:7095 (Profil Belum Berlangganan),
+   587:7488 (Profil Sedang Berlangganan)
+   Perbedaan dari desktop:
+   - padding sisi 80px → 20px
+   - layout 2 kolom (Profil_Card) jadi 1 kolom, panel langganan di bawah
+   - foto profil lebih kecil
+========================= */
+@media (max-width: 480px) {
+  .Profilsaya {
+    padding: 24px 20px;
+    gap: 24px;
+  }
+
+  .Profilsaya h2 {
+    font-size: 24px;
+  }
+
+  .Profil_Card {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  /* Lebar kaku 642px jadi 100% */
+  .Profil_Kiri {
+    width: 100%;
+  }
+
+  .Profil {
+    width: 100%;
+    height: auto;
+  }
+
+  .Profil_Foto {
+    width: 80px;
+    height: 80px;
+  }
+
+  .Mulai_Berlangganan {
+    width: 100%;
+    height: auto;
+    align-items: flex-start;
+  }
+
+  .Mulai_Berlangganan button {
+    align-self: flex-start;
+  }
+}
+

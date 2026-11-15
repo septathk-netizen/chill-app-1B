@@ -13,13 +13,13 @@ const [isOpen, setIsOpen] = useState(false);
         <header className="Navbar">
           <img className="Navbar-Logo" src={Logo} alt="Logo" />
           <nav className="Navbar-Link">
-            <Link className="Body-Large-Medium" to="/series">
+            <Link className="body-large-medium" to="/series">
               Series
             </Link>
-            <Link className="Body-Large-Medium" to="/film">
+            <Link className="body-large-medium" to="/film">
               Film
             </Link>
-            <Link className="Body-Large-Medium" to="/DaftarSaya">
+            <Link className="body-large-medium" to="/DaftarSaya">
               Daftar Saya
             </Link>
           </nav>

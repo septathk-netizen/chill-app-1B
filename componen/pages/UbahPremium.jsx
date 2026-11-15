@@ -52,16 +52,19 @@
        title="Individu"    
        harga="Mulai Rp49.990/bulan 1 Akun"
        kualitas="Kualitas 720p"
+       hargaAngka={49990}
     />
     <CardPaket
        title="Berdua"    
        harga="Mulai Rp79.990/bulan 2 Akun"
        kualitas="Kualitas 1080p"
+       hargaAngka={79990}
     />
     <CardPaket
        title="Kluasrga"    
        harga="Mulai Rp159.990/bulan 5-7 Akun"
        kualitas="Kualitas 4k"
+       hargaAngka={159990}
     />
   </div>
 </div>

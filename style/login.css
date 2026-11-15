@@ -209,9 +209,49 @@
   padding: 0;
 }
 
-@media (min-width: 360px) {
+/* =========================
+   MOBILE (max-width: 480px)
+   Frame Figma mobile: 586:2541 (Masuk)
+   Perbedaan dari desktop:
+   - card menyesuaikan lebar layar (padding 24px)
+   - input & tombol tidak lagi 449px kaku, jadi 100% lebar card
+   - logo & judul tetap di tengah
+========================= */
+@media (max-width: 480px) {
+  .beground {
+    padding: 16px;
+  }
+
   .card {
-    transform: scale(0.65);
-     transform-origin: center;
+    transform: none; /* hapus scale(0.65) yang membuat teks terlalu kecil */
+    width: 100%;
+    max-width: 340px;
+    padding: 24px 20px;
+  }
+
+  /* Input & tombol mengikuti lebar card, bukan angka piksel kaku */
+  .form-group input,
+  .inter button,
+  .masuk button {
+    width: 100%;
+  }
+
+  .title img {
+    max-width: 140px;
+    height: auto;
+  }
+
+  .title h2 {
+    font-size: 20px;
+  }
+
+  .title p {
+    font-size: 13px;
+  }
+
+  .punya-akun {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
   }
 }

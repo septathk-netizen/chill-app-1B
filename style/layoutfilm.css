@@ -27,12 +27,14 @@
 /* 5. Deretan poster yang bisa digeser */
 .layout-film-row {
   display: flex;
-  justify-content: safe center;
+  /* dulu: justify-content: safe center (tidak valid di CSS) — sekarang: */
+  justify-content: flex-start;
   gap: 10px;
   overflow-x: auto;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
+  padding: 0 4px; /* beri ruang untuk panah di tepi */
 }
 
 .layout-film-row::-webkit-scrollbar {
@@ -82,9 +84,38 @@
   right: 4px;
 }
 
-/* 10. Di HP, tampilkan 3 poster */
-@media (max-width: 600px) {
+/* Ukuran kartu & gambar (desktop) */
+.layout-film-card {
+  flex: 0 0 260px;
+}
+
+.layout-film-img {
+  width: 100%;
+  aspect-ratio: 26 / 35; /* rasio poster film */
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+/* 10. Di HP (max-width: 480px): tampilkan 3 poster per layar,
+       ukuran pakai persen supaya rapi di semua lebar 320–768px */
+@media (max-width: 480px) {
+  .layout-film {
+    padding: 16px 20px 24px;
+  }
+
+  .layout-film-title {
+    font-size: 16px;
+  }
+
   .layout-film-card {
     flex: 0 0 calc((100% - 2 * 10px) / 3);
+    scroll-snap-align: start;
+  }
+
+  .layout-film-arrow {
+    width: 24px;
+    height: 24px;
+    font-size: 16px;
   }
 }

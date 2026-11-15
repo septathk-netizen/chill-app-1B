@@ -227,3 +227,67 @@ order: 1;
 flex-grow: 0;
 
  }     
+
+/* =========================
+   MOBILE (max-width: 480px)
+   Frame Figma mobile: 587:8002 (Pilih Paket Langganan)
+   Perbedaan dari desktop:
+   - padding sisi 80px → 20px
+   - grid "Kenapa Harus Berlangganan" 3 kolom → 2 kolom
+   - barisan card paket (852px kaku) jadi wrap & menumpuk vertikal
+========================= */
+@media (max-width: 480px) {
+  .Berlangganan {
+    padding: 24px 20px;
+    gap: 32px;
+  }
+
+  .Berlangganan h2 {
+    width: auto;
+    height: auto;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .Parent {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .Div {
+    width: 100%;
+    height: auto;
+  }
+
+  .Div p {
+    width: 100%;
+    height: auto;
+    font-size: 14px;
+  }
+
+  .PilihPaket {
+    padding: 24px 20px;
+  }
+
+  .Text h2 {
+    width: auto;
+    height: auto;
+    font-size: 24px;
+  }
+
+  .Text p {
+    width: auto;
+    height: auto;
+    font-size: 14px;
+  }
+
+  /* Card paket menumpuk vertikal di HP */
+  .CardPaketmu {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    height: auto;
+  }
+}
+

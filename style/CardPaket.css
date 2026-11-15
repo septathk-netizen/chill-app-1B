@@ -259,3 +259,37 @@ margin-bottom: 24px;
 
 
 }
+
+/* =========================
+   MOBILE (max-width: 480px)
+   Card paket langganan ikut menyesuaikan di HP.
+   Karena dipakai bersama (halaman Premium & Pembayaran),
+   media query ditaruh di sini sekali saja.
+========================= */
+@media (max-width: 480px) {
+  .Card {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+  }
+
+  .Individual {
+    width: 100%;
+    height: auto;
+  }
+
+  .Individual h2 {
+    width: auto;
+    height: auto;
+  }
+
+  .Ceklis0 {
+    width: 100%;
+    height: auto;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+

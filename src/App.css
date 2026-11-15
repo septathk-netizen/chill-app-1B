@@ -5,7 +5,7 @@
 
 
 
-/* Navbar */
+/* Bagian navbar (desktop, 1440px) — TIDAK DIUBAH */
 .Navbar {
     background-color: rgba(24, 26, 28, 1);
     width: 100%;
@@ -21,12 +21,18 @@
     height: auto;
 }
 
+/* Bagian menu link (desktop) */
 .Navbar-Link {
     margin-left: 80px;
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 80px;
+}
+
+/* Mobile: link jadi lebih kecil dan rapat */
+.Navbar-Link .Body-Large-Medium {
+    font-size: 14px;
 }
 
 .User-Icon {
@@ -116,6 +122,47 @@
 .dropdown-menu a:hover {
   background-color: #292d30;
 }
+/* Mobile (max-width: 480px): navbar mengikuti frame Figma 586:3247
+   - tinggi 94px → 56px, padding kiri/kanan 80px → 20px
+   - teks menu lebih kecil dan rapat
+   - avatar 40px → 20px, ikon panah 28px → 16px */
+@media (max-width: 480px) {
+    .Navbar {
+        height: 56px;
+        padding: 6px 20px;
+        gap: 16px;
+    }
+
+    .Navbar-Logo {
+        width: 80px;
+    }
+
+    .Navbar-Link {
+        margin-left: 8px;
+        gap: 16px;
+    }
+
+    .Navbar-Link .body-large-medium {
+        font-size: 12px;
+    }
+
+    .User-Icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .Arow {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+
+
+
+
+
+
 /* area footer */
 Footer {
     

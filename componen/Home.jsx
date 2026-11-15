@@ -2,14 +2,8 @@ import heroBg from "../src/assets/Rectangle 9.png";
 import Hero from "./pages/props elemnt/IklanAtas.jsx";
 import MovieCarousel from "./pages/props elemnt/Teslayoutfilm.jsx";
 
-const assetPathPrefix = "../src/assets";
 
 const trendingMovies = [
-  { id: 1, poster: `${assetPathPrefix}/fame 74.png`, alt: "Poster film trending pertama" },
-  { id: 2, poster: `${assetPathPrefix}/fame 68.png`, alt: "Poster film trending kedua" },
-  { id: 3, poster: `${assetPathPrefix}/fame 71.png`, alt: "Poster film trending ketiga" },
-  { id: 4, poster: `${assetPathPrefix}/fame 68.png`, alt: "Poster film trending keempat" },
-  { id: 5, poster: `${assetPathPrefix}/fame 74.png`, alt: "Poster film trending kelima" },
 ];
 function Home() {
   return (
@@ -21,8 +15,6 @@ function Home() {
       />
 
 
-      <h1>ini halam home utama</h1>
-       <MovieCarousel title="Film Trending" movies={trendingMovies} />
     </section>
 
   );

@@ -9,6 +9,7 @@ import Series from "../componen/pages/series.jsx";
 import DaftarSaya from "../componen/pages/Daftar-Saya.jsx";
 import ProfilSaya from "../componen/pages/Profil_saya.jsx";
 import UbahPremium from "../componen/pages/UbahPremium.jsx";
+import Pembayaran from "../componen/pages/Pembayaran.jsx";
 import Login from "../componen/pages/Login.jsx";
 import Daftar from "../componen/pages/Daftar.jsx";
 
@@ -41,6 +42,7 @@ function App() {
             <Route path="Series" element={<Series />} />
             <Route path="Profil" element={<ProfilSaya />} />
             <Route path="Premium" element={<UbahPremium />} />
+            <Route path="pembayaran" element={<Pembayaran />} />
           </Route>
         </Routes>
       </BrowserRouter>
