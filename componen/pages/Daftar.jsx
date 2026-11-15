@@ -48,7 +48,7 @@ function Daftar() {
 
           <div className="title">
             <h2>daftar</h2>
-            <p>ayolah, daftarkan dirimu</p>
+            <p>Selamat datang !</p>
           </div>
 
           {/* form ini berguna untuk mengelompokan input pengguna */}

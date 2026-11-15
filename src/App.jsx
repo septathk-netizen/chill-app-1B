@@ -1,9 +1,8 @@
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
-import { AuthProvider } from "../componen/pages/AuthContext.jsx";
+import { BrowserRouter, Routes, Route, Outlet, Navigate } from "react-router-dom";
+import { AuthProvider, useAuth } from "../componen/pages/AuthContext.jsx";
 import "./App.css";
 import Navbar from "../componen/navbar.jsx";
 import Footer from "../componen/footer.jsx";
-import Home from "../componen/Home.jsx";
 import Film from "../componen/pages/film.jsx";
 import Series from "../componen/pages/series.jsx";
 import DaftarSaya from "../componen/pages/Daftar-Saya.jsx";
@@ -14,7 +13,10 @@ import Login from "../componen/pages/Login.jsx";
 import Daftar from "../componen/pages/Daftar.jsx";
 
 
-function Layout() {
+// Pengunjung yang belum login dipaksa ke /login dulu
+function ProtectedLayout() {
+  const { user } = useAuth();
+  if (!user) return <Navigate to="/login" replace />;
   return (
     <>
       <Navbar />
@@ -35,8 +37,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/daftar" element={<Daftar />} />
 
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
+          <Route path="/" element={<ProtectedLayout />}>
+            <Route index element={<Series />} />
             <Route path="film" element={<Film />} />
             <Route path="DaftarSaya" element={<DaftarSaya />} />
             <Route path="Series" element={<Series />} />

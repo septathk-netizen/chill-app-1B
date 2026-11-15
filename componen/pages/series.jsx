@@ -42,7 +42,7 @@ function Series (){
     ]}
 />
   <LayoutFilm
-    title="Top Rating Series Hari in"
+    title="Top Rating Series Hari ini"
     items={[
       { img: Persembahan1,   },
       { img: Persembahan2,   },
