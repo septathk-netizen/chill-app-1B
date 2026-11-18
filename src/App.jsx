@@ -12,6 +12,7 @@ import UbahPremium from "../componen/pages/UbahPremium.jsx";
 import Pembayaran from "../componen/pages/Pembayaran.jsx";
 import Login from "../componen/pages/Login.jsx";
 import Daftar from "../componen/pages/Daftar.jsx";
+import SuperAdmin from "../componen/pages/SuperAdmin.jsx";
 
 
 // Pengunjung yang belum login dipaksa ke /login dulu
@@ -47,6 +48,7 @@ function App() {
             <Route path="Profil" element={<ProfilSaya />} />
             <Route path="Premium" element={<UbahPremium />} />
             <Route path="pembayaran" element={<Pembayaran />} />
+            <Route path="superadmin" element={<SuperAdmin />} />
           </Route>
         </Routes>
       </BrowserRouter>

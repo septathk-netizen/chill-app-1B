@@ -37,6 +37,7 @@ const [isOpen, setIsOpen] = useState(false);
     <div className="dropdown-menu">
       <Link to="/profil">♟ Profil Saya</Link>
       <Link to="/premium">★ Ubah Premium</Link>
+      <Link to="/superadmin">🛠 Super Admin</Link>
       <Link to="/logout">⇥ Keluar</Link>
     </div>
   )}
