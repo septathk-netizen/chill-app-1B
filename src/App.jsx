@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Outlet, Navigate } from "react-router-dom";
 import { AuthProvider, useAuth } from "../componen/pages/AuthContext.jsx";
+import { DataProvider } from "../componen/pages/DataContext.jsx";
 import "./App.css";
 import Navbar from "../componen/navbar.jsx";
 import Footer from "../componen/footer.jsx";
@@ -31,6 +32,7 @@ function ProtectedLayout() {
 function App() {
   return (
     <AuthProvider>
+      <DataProvider>
       <BrowserRouter>
         <Routes>
           {/* Halaman auth tanpa navbar & footer */}
@@ -48,6 +50,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+      </DataProvider>
     </AuthProvider>
   );
 }

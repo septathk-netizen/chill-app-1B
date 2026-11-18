@@ -42,8 +42,38 @@ export function AuthProvider({ children }) {
 
   const logout = () => setUser(null);
 
+  // ---- Daftar Saya (film favorit) ----
+  const [daftarSaya, setDaftarSaya] = useState(() => {
+    return JSON.parse(localStorage.getItem("daftarSaya")) || [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("daftarSaya", JSON.stringify(daftarSaya));
+  }, [daftarSaya]);
+
+  // tambahkan film ke daftar saya (hindari duplikat)
+  const tambahKeDaftar = (film) => {
+    setDaftarSaya((prev) =>
+      prev.some((f) => f.id === film.id) ? prev : [...prev, film]
+    );
+  };
+
+  const hapusDariDaftar = (id) => {
+    setDaftarSaya((prev) => prev.filter((f) => f.id !== id));
+  };
+
   return (
-    <AuthContext.Provider value={{ user, register, login, logout }}>
+    <AuthContext.Provider
+      value={{
+        user,
+        register,
+        login,
+        logout,
+        daftarSaya,
+        tambahKeDaftar,
+        hapusDariDaftar,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );

@@ -1,4 +1,5 @@
 import '../../style/DaftarSaya.css'
+import { useAuth } from './AuthContext.jsx'
 
 import Frame74 from '../../src/assets/Frame 74 (1).png'
 import Frame78 from '../../src/assets/Frame 78 (3).png'
@@ -15,24 +16,38 @@ import Frame79a from '../../src/assets/Frame 79 (2).png'
 
 
 function DaftarSaya (){
+    const { daftarSaya, hapusDariDaftar } = useAuth();
+
     return (
         <div className='DaftarSaya'>
 
         <h2>Daftar Saya</h2>
         <div className='Img1'>
 
-            <img src={Frame74} />
-            <img src={Frame78} />
-            <img src={Frame76} />
-            <img src={Frame79} />
-            <img src={Image228} />
-            <img src={Frame75} />
-            <img src={Frame742} />
-            <img src={Componen1} />
-            <img src={Componen13} />
-            <img src={Frame76a} />
-            <img src={Componen1a} />
-            <img src={Frame79a} />
+            {daftarSaya.length === 0 && <p>Belum ada film di Daftar Saya.</p>}
+            {daftarSaya.map((film) => (
+                <div key={film.id} style={{ position: 'relative', display: 'inline-block' }}>
+                    <img src={film.img} alt={film.title} />
+                    <button
+                        onClick={() => hapusDariDaftar(film.id)}
+                        style={{
+                            position: 'absolute',
+                            top: 4,
+                            right: 4,
+                            cursor: 'pointer',
+                            background: 'rgba(0,0,0,0.6)',
+                            color: '#fff',
+                            border: 'none',
+                            borderRadius: '50%',
+                            width: 24,
+                            height: 24,
+                        }}
+                        title="Hapus dari Daftar Saya"
+                    >
+                        ✕
+                    </button>
+                </div>
+            ))}
 
         </div>
         </div>

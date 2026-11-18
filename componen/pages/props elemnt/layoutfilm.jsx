@@ -1,8 +1,10 @@
 import { useRef } from "react";
+import { useAuth } from "../AuthContext.jsx";
 import "../../../style/layoutfilm.css";
 
 function LayoutFilm({ title, items }) {
   const rowRef = useRef(null);
+  const { tambahKeDaftar } = useAuth();
 
   // fungsi untuk menggeser (scroll) barisan kartu film
   const geser = (arah) => {
@@ -35,7 +37,18 @@ function LayoutFilm({ title, items }) {
 
       <div className="layout-film-row" ref={rowRef}>
         {items.map((item, index) => (
-          <div className="layout-film-card" key={index}>
+          <div
+            className="layout-film-card"
+            key={index}
+            style={{ cursor: "pointer" }}
+            onClick={() =>
+              tambahKeDaftar({
+                id: `${title}-${index}`,
+                img: item.img,
+                title: item.title || title,
+              })
+            }
+          >
             <img className="layout-film-img" src={item.img} alt={item.title} />
             <div className="layout-film-info">
               <p className="layout-film-judul">{item.title}</p>
