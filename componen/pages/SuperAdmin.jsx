@@ -1,23 +1,12 @@
 import "../../style/SuperAdmin.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { dataSeries, dataFilm } from "./dataFilm.js";
+import { daftarGambar } from "./daftarGambar.js";
 
 // ============================================================
 // HALAMAN SUPER ADMIN
 // CRUD konten Hero + LayoutFilm untuk halaman Series & Film
 // ============================================================
-
-// simpan gambar yang tersedia (biar bisa dipilih saat tambah/ubah)
-const pilihanGambar = {
-  ...Object.fromEntries(
-    dataSeries.sections.flatMap((s) => s.items.map((i) => [i.img, i.img])),
-  ),
-  ...Object.fromEntries(
-    dataFilm.sections.flatMap((s) => s.items.map((i) => [i.img, i.img])),
-  ),
-  [dataSeries.hero.img]: dataSeries.hero.img,
-  [dataFilm.hero.img]: dataFilm.hero.img,
-};
 
 function SuperAdmin() {
   // state: salinan data yang bisa diedit — muat dari localStorage kalau ada
@@ -95,7 +84,7 @@ function SuperAdmin() {
     setData((prev) => {
       const sections = [...prev[halaman].sections];
       const items = [...sections[sectionIndex].items];
-      items.push({ img: Object.values(pilihanGambar)[0] });
+      items.push({ img: daftarGambar[0].img });
       sections[sectionIndex] = { ...sections[sectionIndex], items };
       return { ...prev, [halaman]: { ...prev[halaman], sections } };
     });
@@ -168,9 +157,9 @@ function SuperAdmin() {
             value={aktif.hero.img}
             onChange={(e) => ubahHero("img", e.target.value)}
           >
-            {Object.keys(pilihanGambar).map((img) => (
-              <option key={img} value={img}>
-                {img.split("/").pop()}
+            {daftarGambar.map((g) => (
+              <option key={g.nama} value={g.img}>
+                {g.nama}
               </option>
             ))}
           </select>
@@ -204,9 +193,9 @@ function SuperAdmin() {
                   value={item.img}
                   onChange={(e) => ubahItem(sIndex, iIndex, e.target.value)}
                 >
-                  {Object.keys(pilihanGambar).map((img) => (
-                    <option key={img} value={img}>
-                      {img.split("/").pop()}
+                  {daftarGambar.map((g) => (
+                    <option key={g.nama} value={g.img}>
+                      {g.nama}
                     </option>
                   ))}
                 </select>
