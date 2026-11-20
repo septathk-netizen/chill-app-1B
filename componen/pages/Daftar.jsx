@@ -16,7 +16,7 @@ function Daftar() {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
 
@@ -30,8 +30,8 @@ function Daftar() {
     }
 
     try {
-      // pakai username sebagai email unik (localStorage butuh identifier)
-      register({ nama: username, email: username, password });
+      // pakai username sebagai email unik
+      await register({ nama: username, email: username, password });
       navigate("/");
     } catch (err) {
       setError(err.message);
