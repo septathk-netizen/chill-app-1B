@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { getUsers, createUser, updateUser } from "./mockapi.js";
+import { getUsers, createUser, updateUser, getUserById } from "../../src/services/api/mockapi.js";
 
 const AuthContext = createContext(null);
 
@@ -53,19 +53,31 @@ export function AuthProvider({ children }) {
   const logout = () => setUser(null);
 
   // ---- Daftar Saya (film favorit, disimpan di field daftarsaya MockAPI) ----
-  const bacaDaftar = () => {
+  const bacaDaftar = (u = user) => {
     try {
-      return JSON.parse(user?.daftarsaya || "[]");
+      return JSON.parse(u?.daftarsaya || "[]");
     } catch {
       return [];
+    }
+  };
+
+  // ambil ulang daftar terbaru dari MockAPI (dipanggil sebelum tambah)
+  const refreshDaftarSaya = async () => {
+    if (!user) return;
+    try {
+      const fresh = await getUserById(user.id);
+      setUser((prev) => ({ ...prev, daftarsaya: fresh.daftarsaya || "[]" }));
+    } catch {
+      // diamkan, pakai data lama
     }
   };
 
   const tambahKeDaftar = async (film) => {
     if (!user) throw new Error("Harus login dulu.");
     const list = bacaDaftar();
-    if (list.some((f) => f.id === film.id)) return;
-    const baru = [...list, film];
+    const item = { id: film.id, img: film.img, title: film.title };
+    if (list.some((f) => f.id === item.id)) return; // sudah ada, cukup diabaikan
+    const baru = [...list, item];
     const updated = await updateUser(user.id, {
       daftarsaya: JSON.stringify(baru),
     });
@@ -91,6 +103,7 @@ export function AuthProvider({ children }) {
         login,
         logout,
         daftarSaya,
+        refreshDaftarSaya,
         tambahKeDaftar,
         hapusDariDaftar,
       }}

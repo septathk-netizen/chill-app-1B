@@ -1,13 +1,22 @@
 // ============================================================
-// KONFIGURASI & HELPER MOCKAPI
-// Base URL proyek chillapp kamu di mockapi.io
+// KONFIGURASI & HELPER API (MockAPI)
+// Service terpusat untuk panggilan ke MockAPI.
+// Base URL diambil dari VITE_API_URL (.env).
 // ============================================================
-export const API_URL = "https://6b0034d17fc363ccff09ec97.mockapi.io/chillapp";
+
+export const API_URL = import.meta.env.VITE_API_URL;
 
 // GET semua user
 export async function getUsers() {
   const res = await fetch(API_URL);
   if (!res.ok) throw new Error("Gagal mengambil data dari MockAPI.");
+  return res.json();
+}
+
+// GET user by id
+export async function getUserById(id) {
+  const res = await fetch(`${API_URL}/${id}`);
+  if (!res.ok) throw new Error("Gagal mengambil data user.");
   return res.json();
 }
 
@@ -30,5 +39,12 @@ export async function updateUser(id, perubahan) {
     body: JSON.stringify(perubahan),
   });
   if (!res.ok) throw new Error("Gagal memperbarui data.");
+  return res.json();
+}
+
+// DELETE user
+export async function deleteUser(id) {
+  const res = await fetch(`${API_URL}/${id}`, { method: "DELETE" });
+  if (!res.ok) throw new Error("Gagal menghapus data.");
   return res.json();
 }

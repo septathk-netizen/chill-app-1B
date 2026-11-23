@@ -18,7 +18,7 @@ function Login() {
     e.preventDefault();
     setError("");
     try {
-      login({ email: username, password });
+      await login({ email: username, password });
       navigate("/");
     } catch (err) {
       setError(err.message);

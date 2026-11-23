@@ -1,4 +1,5 @@
 import '../../style/DaftarSaya.css'
+import { useEffect } from 'react'
 import { useAuth } from './AuthContext.jsx'
 
 import Frame74 from '../../src/assets/Frame 74 (1).png'
@@ -16,7 +17,12 @@ import Frame79a from '../../src/assets/Frame 79 (2).png'
 
 
 function DaftarSaya (){
-    const { daftarSaya, hapusDariDaftar } = useAuth();
+    const { daftarSaya, hapusDariDaftar, refreshDaftarSaya } = useAuth();
+
+    // pastikan daftar terbaru dari database langsung tampil saat halaman dibuka
+    useEffect(() => {
+        refreshDaftarSaya();
+    }, []);
 
     return (
         <div className='DaftarSaya'>
