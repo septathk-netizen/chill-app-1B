@@ -1,11 +1,15 @@
 import Hero from './props elemnt/IklanAtas.jsx'
 import LayoutFilm from "./props elemnt/layoutfilm.jsx";
 import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { setDataApi } from '../../src/store/redux/apiSlice';
 import { dataSeries } from './dataFilm.js'
 import { useAuth } from './AuthContext.jsx'
 
 function Series (){
     const { user, refreshDaftarSaya, tambahKeDaftar } = useAuth();
+    const dispatch = useDispatch();
+    const filmData = useSelector((state) => state.apiData.film);
 
     // muat data terbaru dari SuperAdmin (localStorage) kalau ada
     const [data, setData] = useState(dataSeries);
@@ -14,6 +18,10 @@ function Series (){
         const simpan = JSON.parse(localStorage.getItem("dataKonten"));
         if (simpan?.series) setData(simpan.series);
     }, []);
+
+    useEffect(() => {
+        dispatch(setDataApi({ film: filmData, series: data.sections }));
+    }, [data.sections, filmData, dispatch]);
 
     const klikSeries = async (item, kategori, index) => {
         if (!user) {
@@ -45,6 +53,7 @@ function Series (){
           <LayoutFilm
             key={index}
             title={section.kategori}
+            halaman="series"
             items={section.items}
             onKlikFilm={klikSeries}
           />

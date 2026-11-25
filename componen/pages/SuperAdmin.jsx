@@ -1,5 +1,7 @@
 import "../../style/SuperAdmin.css";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setDataApi } from "../../src/store/redux/apiSlice";
 import { dataSeries, dataFilm } from "./dataFilm.js";
 import { daftarGambar } from "./daftarGambar.js";
 
@@ -9,6 +11,7 @@ import { daftarGambar } from "./daftarGambar.js";
 // ============================================================
 
 function SuperAdmin() {
+  const dispatch = useDispatch();
   // state: salinan data yang bisa diedit — muat dari localStorage kalau ada
   const [halaman, setHalaman] = useState("series"); // "series" | "film"
   const [data, setData] = useState(() => {
@@ -32,6 +35,7 @@ function SuperAdmin() {
       "dataKonten",
       JSON.stringify({ series: data.series, film: data.film }),
     );
+    dispatch(setDataApi({ film: data.film, series: data.series }));
     alert("Perubahan tersimpan! Muat ulang halaman Series/Film untuk melihatnya.");
   };
 

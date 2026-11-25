@@ -1,8 +1,11 @@
 import { useRef } from "react";
+import { useSelector } from "react-redux";
 import "../../../style/layoutfilm.css";
 
-function LayoutFilm({ title, items, onKlikFilm }) {
+function LayoutFilm({ title, items, onKlikFilm, halaman }) {
   const rowRef = useRef(null);
+  const pageData = useSelector((state) => state.apiData[halaman] || []);
+  const section = pageData.find((s) => s.kategori === title);
 
   // fungsi untuk menggeser (scroll) barisan kartu film
   const geser = (arah) => {
@@ -34,7 +37,7 @@ function LayoutFilm({ title, items, onKlikFilm }) {
       </button>
 
       <div className="layout-film-row" ref={rowRef}>
-        {items.map((item, index) => (
+        {(section?.items?.length ? section.items : (items && items.length ? items : [])).map((item, index) => (
           <div
             className="layout-film-card"
             key={index}

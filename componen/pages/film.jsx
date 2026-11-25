@@ -3,10 +3,14 @@ import { useAuth } from "./AuthContext.jsx";
 import Hero from "./props elemnt/IklanAtas.jsx";
 import LayoutFilm from "./props elemnt/layoutfilm.jsx";
 import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { setDataApi } from "../../src/store/redux/apiSlice";
 import { dataFilm } from "./dataFilm.js";
 
 function Film() {
   const { user, refreshDaftarSaya, tambahKeDaftar } = useAuth();
+  const dispatch = useDispatch();
+  const seriesData = useSelector((state) => state.apiData.series);
 
   // muat data terbaru dari SuperAdmin (localStorage) kalau ada
   const [data, setData] = useState(dataFilm);
@@ -15,6 +19,10 @@ function Film() {
     const simpan = JSON.parse(localStorage.getItem("dataKonten"));
     if (simpan?.film) setData(simpan.film);
   }, []);
+
+  useEffect(() => {
+    dispatch(setDataApi({ film: data.sections, series: seriesData }));
+  }, [data.sections, seriesData, dispatch]);
 
   // klik film -> langsung masuk Daftar Saya tanpa alert
   const klikFilm = async (item, kategori, index) => {
@@ -46,6 +54,7 @@ function Film() {
         <LayoutFilm
           key={index}
           title={section.kategori}
+          halaman="film"
           items={section.items}
           onKlikFilm={klikFilm}
         />
