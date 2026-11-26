@@ -4,7 +4,8 @@ import "../../../style/layoutfilm.css";
 
 function LayoutFilm({ title, items, onKlikFilm, halaman }) {
   const rowRef = useRef(null);
-  const pageData = useSelector((state) => state.apiData[halaman] || []);
+  const apiData = useSelector((state) => state.apiData);
+  const pageData = apiData.filter(item => item.type === halaman);
   const section = pageData.find((s) => s.kategori === title);
 
   // fungsi untuk menggeser (scroll) barisan kartu film

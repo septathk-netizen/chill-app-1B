@@ -1,27 +1,31 @@
-import Hero from './props elemnt/IklanAtas.jsx'
+import Hero from "./props elemnt/IklanAtas.jsx";
 import LayoutFilm from "./props elemnt/layoutfilm.jsx";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setDataApi } from '../../src/store/redux/apiSlice';
-import { dataSeries } from './dataFilm.js'
+import { getContent } from "../../src/services/api/contentApi";
 import { useAuth } from './AuthContext.jsx'
 
 function Series (){
     const { user, refreshDaftarSaya, tambahKeDaftar } = useAuth();
     const dispatch = useDispatch();
-    const filmData = useSelector((state) => state.apiData.film);
-
-    // muat data terbaru dari SuperAdmin (localStorage) kalau ada
-    const [data, setData] = useState(dataSeries);
-
-    useEffect(() => {
-        const simpan = JSON.parse(localStorage.getItem("dataKonten"));
-        if (simpan?.series) setData(simpan.series);
-    }, []);
+    const apiData = useSelector((state) => state.apiData);
+    const seriesData = apiData.filter(item => item.type === "series");
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        dispatch(setDataApi({ film: filmData, series: data.sections }));
-    }, [data.sections, filmData, dispatch]);
+        const fetchData = async () => {
+            try {
+                const data = await getContent();
+                dispatch(setDataApi(data));
+            } catch (err) {
+                console.error("Gagal memuat data series:", err);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchData();
+    }, [dispatch]);
 
     const klikSeries = async (item, kategori, index) => {
         if (!user) {
@@ -40,18 +44,16 @@ function Series (){
         }
     };
 
+    if (loading) {
+        return <div className="loading">Memuat data series...</div>;
+    }
+
     return (
         <div>
-
-        <Hero
-          img={data.hero.img}
-          title={data.hero.title}
-          description={data.hero.description}
-        />
-
-        {data.sections.map((section, index) => (
+        <Hero halaman="series" />
+        {seriesData.map((section, index) => (
           <LayoutFilm
-            key={index}
+            key={section.id || index}
             title={section.kategori}
             halaman="series"
             items={section.items}
@@ -59,7 +61,7 @@ function Series (){
           />
         ))}
 
-  </div>
+      </div>
     )
 }
 
