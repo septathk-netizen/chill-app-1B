@@ -3,18 +3,30 @@ import { useAuth } from "./AuthContext.jsx";
 import Hero from "./props elemnt/IklanAtas.jsx";
 import LayoutFilm from "./props elemnt/layoutfilm.jsx";
 import { useState, useEffect } from "react";
-import { dataFilm } from "./dataFilm.js";
+import { useSelector, useDispatch } from "react-redux";
+import { setDataApi } from "../../src/store/redux/apiSlice";
+import { getContent } from "../../src/services/api/contentApi";
 
 function Film() {
   const { user, refreshDaftarSaya, tambahKeDaftar } = useAuth();
-
-  // muat data terbaru dari SuperAdmin (localStorage) kalau ada
-  const [data, setData] = useState(dataFilm);
+  const dispatch = useDispatch();
+  const apiData = useSelector((state) => state.apiData);
+  const filmData = apiData.filter(item => item.type === "film");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const simpan = JSON.parse(localStorage.getItem("dataKonten"));
-    if (simpan?.film) setData(simpan.film);
-  }, []);
+    const fetchData = async () => {
+      try {
+        const data = await getContent();
+        dispatch(setDataApi(data));
+      } catch (err) {
+        console.error("Gagal memuat data film:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, [dispatch]);
 
   // klik film -> langsung masuk Daftar Saya tanpa alert
   const klikFilm = async (item, kategori, index) => {
@@ -34,18 +46,18 @@ function Film() {
     }
   };
 
+  if (loading) {
+    return <div className="loading">Memuat data film...</div>;
+  }
+
   return (
     <div>
-      <Hero
-        img={data.hero.img}
-        title={data.hero.title}
-        description={data.hero.description}
-      />
-
-      {data.sections.map((section, index) => (
+      <Hero halaman="film" />
+      {filmData.map((section, index) => (
         <LayoutFilm
-          key={index}
+          key={section.id || index}
           title={section.kategori}
+          halaman="film"
           items={section.items}
           onKlikFilm={klikFilm}
         />

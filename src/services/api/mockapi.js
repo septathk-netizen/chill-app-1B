@@ -48,3 +48,6 @@ export async function deleteUser(id) {
   if (!res.ok) throw new Error("Gagal menghapus data.");
   return res.json();
 }
+
+// Alias agar impor bernama getData tetap resolve ke getUsers
+export const getData = getUsers;
